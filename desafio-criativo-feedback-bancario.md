@@ -1,76 +1,68 @@
-# 🎯 Desafio Criativo: Extraindo Insights do Feedback de Clientes Bancários
+# Desafio Criativo: insights a partir de feedbacks de clientes bancários
 
-Neste desafio, construí um prompt em três etapas para orientar uma IA a analisar feedbacks de clientes bancários, com contexto, critérios de análise e cuidados com dados sensíveis.
-
----
-
-## 🧱 Passo 1: Defina a intenção
-
-Quero que a IA analise comentários de clientes sobre o Internet Banking e o aplicativo de um banco para identificar os problemas mais citados, os pontos elogiados e as oportunidades de melhoria.
-
-O resultado será usado pela equipe de experiência do cliente e pelo time de produtos digitais para apoiar a priorização de correções e melhorias nos canais digitais.
-
-A entrega deve conter um resumo executivo, uma tabela com os principais temas, exemplos de comentários que sustentem cada tema e recomendações práticas.
-
-O resultado será considerado bom se for claro, bem organizado, baseado somente nos comentários fornecidos e útil para decidir o que resolver primeiro.
+Neste desafio montei, em três passos, um prompt para a IA analisar comentários de clientes de um banco e me entregar algo que dê para usar de verdade: os temas que mais aparecem, o que está irritando as pessoas e o que dá para melhorar primeiro.
 
 ---
 
-## 🧱 Passo 2: Adicione contexto e restrições
+## Passo 1: Intenção
 
-**Contexto:** Estou trabalhando com feedbacks de clientes bancários relacionados ao aplicativo, ao Pix, ao cartão de crédito e ao atendimento por chat.
+Quero que a IA leia comentários de clientes sobre o aplicativo do banco, o Pix, o cartão de crédito e o atendimento por chat, e me diga quais são as reclamações mais comuns, o que as pessoas elogiam e onde há espaço para melhorar.
 
-**Dados disponíveis:** A base contém data do comentário, canal de atendimento, texto do feedback, produto citado e nota de satisfação de 1 a 5.
+Quem vai usar o resultado é a equipe de experiência do cliente e o time responsável pelos canais digitais. A ideia é que eles consigam decidir o que corrigir primeiro.
 
-**Critérios de análise:** A IA deve classificar os feedbacks por tema, sentimento (positivo, neutro ou negativo), urgência (baixa, média ou alta) e produto citado.
+Quero receber um resumo curto, uma tabela com os principais temas e exemplos de comentários que provem cada ponto, além de sugestões práticas.
 
-**Cuidados e restrições:**
-
-- Use apenas os dados fornecidos.
-- Não invente números, causas ou conclusões.
-- Não exponha dados pessoais ou sensíveis (nome, CPF, número de conta ou cartão, telefone, e-mail).
-- Não ignore os comentários negativos.
-- Se houver informação insuficiente, indique a limitação.
-- Use linguagem simples, direta e voltada para a tomada de decisão.
+Considero o resultado bom se estiver claro, bem organizado, baseado só nos comentários que eu enviei e se ajudar a priorizar as ações.
 
 ---
 
-## 🧱 Passo 3: Prompt final
+## Passo 2: Contexto e restrições
+
+**Contexto:** os feedbacks são de clientes de um banco e falam do aplicativo, do Pix, do cartão de crédito e do atendimento por chat.
+
+**Dados:** cada comentário vem com a data, o canal de atendimento, o texto do cliente, o produto citado e uma nota de satisfação de 1 a 5.
+
+**Como analisar:** a IA deve separar os comentários por tema, sentimento (positivo, neutro ou negativo), urgência (baixa, média ou alta) e produto citado.
+
+**Cuidados:**
+
+- Usar só os dados que eu fornecer.
+- Não inventar números, causas ou conclusões.
+- Não mostrar dados pessoais, como nome, CPF, telefone, e-mail ou número de conta e de cartão.
+- Não deixar de lado os comentários negativos.
+- Avisar quando não houver informação suficiente para concluir algo.
+- Escrever de forma simples e direta, pensando em quem vai tomar a decisão.
+
+---
+
+## Passo 3: Prompt final
 
 ```text
-Atue como analista de dados e de experiência do cliente em um banco.
+Você é um analista de dados e de experiência do cliente de um banco.
 
-Sua tarefa é analisar feedbacks de clientes sobre o aplicativo bancário, o Pix, o cartão de crédito e o atendimento por chat para identificar temas recorrentes, o sentimento dos clientes e oportunidades de melhoria.
+Vou te passar feedbacks de clientes sobre o aplicativo, o Pix, o cartão de crédito e o atendimento por chat. Quero que você encontre os temas que mais se repetem, entenda como os clientes estão se sentindo e aponte o que pode melhorar.
 
-Contexto: A análise será usada pela equipe de experiência do cliente e pelo time de produtos digitais para priorizar melhorias nos canais digitais e reduzir atritos no atendimento. O objetivo é transformar comentários soltos em insights claros e acionáveis.
+Quem vai ler sua análise é a equipe de experiência do cliente e o time dos canais digitais. Eles precisam decidir o que atacar primeiro, então transforme os comentários soltos em pontos claros e que deem para virar ação.
 
-Dados disponíveis: Serão fornecidos comentários com data, canal de atendimento, texto do feedback, produto citado e nota de satisfação de 1 a 5.
+Cada feedback tem data, canal de atendimento, texto, produto citado e nota de satisfação de 1 a 5.
 
-Instruções de análise:
-1. Classifique os feedbacks por tema, sentimento (positivo, neutro ou negativo), urgência (baixa, média ou alta) e produto citado.
-2. Identifique os principais padrões, problemas, elogios e oportunidades de melhoria.
-3. Aponte evidências nos dados fornecidos, usando trechos curtos dos comentários.
-4. Relacione, quando os dados permitirem, os temas com as notas de satisfação.
-5. Sugira ações práticas para a equipe de experiência do cliente e para o time responsável pelos canais digitais.
+Na análise:
+1. Classifique cada feedback por tema, sentimento (positivo, neutro ou negativo), urgência (baixa, média ou alta) e produto citado.
+2. Identifique os padrões, os problemas, os elogios e as oportunidades de melhoria.
+3. Mostre as evidências com trechos curtos dos próprios comentários.
+4. Quando os dados permitirem, relacione os temas com as notas de satisfação.
+5. Sugira ações práticas para cada time.
 
-Formato da resposta:
-- Resumo executivo com até 5 linhas.
-- Tabela com as colunas: tema, sentimento, urgência, evidência e ação sugerida.
-- Lista final com as 3 prioridades mais importantes e a justificativa de cada uma.
+Entregue assim:
+- Um resumo de até 5 linhas.
+- Uma tabela com tema, sentimento, urgência, evidência e ação sugerida.
+- No final, as 3 prioridades mais importantes, com o motivo de cada uma.
 
-Restrições:
-- Use apenas os dados fornecidos.
+Regras:
+- Use só os dados que eu enviei.
 - Não invente números, causas ou conclusões.
-- Não exponha dados pessoais ou sensíveis. Se algum comentário os contiver, omita ou anonimize essas informações.
-- Não ignore comentários negativos nem destaque só os elogios.
-- Informe limitações quando os dados não forem suficientes.
-- Use linguagem simples, direta e voltada para a tomada de decisão.
+- Não exponha dados pessoais ou sensíveis. Se algum comentário tiver esse tipo de informação, omita ou anonimize.
+- Não ignore as reclamações nem mostre só os elogios.
+- Se os dados não bastarem para uma conclusão, diga isso.
+- Use linguagem simples e direta.
 ```
-
----
-
-## ✅ Revisão final
-
-- **A tarefa está clara?** Sim: analisar feedbacks e entregar insights acionáveis.
-- **O formato foi definido?** Sim: resumo executivo, tabela e 3 prioridades.
-- **A IA sabe o que evitar?** Sim: inventar dados, expor informações pessoais e ignorar comentários negativos.
